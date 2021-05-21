@@ -1,6 +1,6 @@
 # Sketch-Generation-with-Drawing-Process-Guided-by-Vector-Flow-and-Grayscale
 
-以下のサイトを参考に画像を鉛筆画風に変換するアプリをEelで作成
+Create an application in Eel that converts an image to a pencil drawing style by referring to the following site.
 
 http://cedro3.com/ai/sketch/  
 
