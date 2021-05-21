@@ -1,4 +1,4 @@
-# Sketch-Generation-with-Drawing-Process-Guided-by-Vector-Flow-and-Grayscale
+# Sketch-Generation-with-Drawing-Process-Guided-by-Vector-Flow-and-Grayscale with Eel
 
 Create an application in Eel that converts an image to a pencil drawing style by referring to the following site.
 
