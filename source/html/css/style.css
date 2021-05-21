@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px;
+}
+html, body {
+    height: 100%;
+}
+body *, ::before, ::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'M PLUS 1p', sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+    color: #000;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+}
+header {
+    background-color: #1951ec;
+    border-bottom: #fce2e2 6px solid;
+}
+header .container {
+    min-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 76px;
+    background-image: url(#);
+    background-repeat: no-repeat;
+    background-size: 53px;
+    background-position: 16px 10px;
+}
+@media (min-width: 768px) {
+    header .container {
+        min-height: 100px;
+        padding-left: 120px;
+        background-size: 80px;
+        background-position: 30px 20px;
+    }
+}
+header .container h1,
+header .container h2 {
+    margin: 0;
+    color: #fff;
+    line-height: 1;
+}
+header .container h1 {
+    padding: 15px 0 4px 0;
+    border-bottom: 1px dotted #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+header .container h2 {
+    padding: 5px 0 0 0;
+    font-size: 10px;
+    font-weight: 400;
+}
+@media (min-width: 768px) {
+    header .container h1 {
+        padding: 30px 0 5px 0;
+        font-size: 24px;
+    }
+    header .container h2 {
+        padding: 6px 0 0 0;
+        font-size: 14px;
+    }
+}
+main {
+    min-height: calc(100% - 156px);
+}
+main .container {
+    margin: 0 auto;
+    background-color: #fff;
+}
+footer {
+    background-color: #c3c7c9;
+}
+footer .container {
+    min-height: 50px;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+}
+@media (min-width: 768px) {
+    footer .container {
+        min-height: 50px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+footer .container p {
+    margin: 0;
+}
+a {
+    color: #ed8a29;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffb974;
+    text-decoration: underline;
+}
+
+.pic_frame {
+    display: inline-block;
+    text-align: center;
+  }
+
+  table {
+    text-align: center;
+  }
+
+  .box6 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+}
+.box6 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.btn {
+    background-color: #009cd3;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Bitter', serif;
+    width: 135px;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;  /*ボタンの角を丸くする*/
+    border: 3px solid #009cd3;  /*ボタンに枠線wつける */
+    
+  }
+  
+  .btn:hover{
+    text-decoration: none;  /*下線の削除*/
+    background-color: #f3f58f;  /*マウスおーばした際の色を反転させる。*/
+    color: #009cd3;
+  }

@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo Apps</title>
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/loading_style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<!-- Ajax通信時にloading画面表示 start-->
+<div id="overlay">
+  <div class="cv-spinner">
+    <span class="spinner"></span>
+  </div>
+</div>
+<!-- Ajax通信時にloading画面表示 end -->
+<div class="container">
+  <h1>写真を鉛筆画に変換するアプリ</h1>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+  
+  <section>
+    <h1>Photo to Pencil drawing</h1>
+    <p>写真画像をアップロードすると自動的に鉛筆画に変換します。</p>
+    <!-- 画像表示 -->
+    <table cellpadding="5">
+      <tr>
+        <td><img src="img/before.jpg" width="400px" height="297px"></td>
+        <td><img src="img/after.jpg"  width="400px" height="297px"></td>
+      </tr>
+      <tr>
+        <td>写真画像(インプット）</td>
+        <td>鉛筆画(アウトプット）</td> 
+      </tr>
+    </table>
+  </section>  
+  <section>
+  <hr>
+  <h1>画像をアプロード</h1>
+  <p>画像をアップロードする自動的に画像を鉛筆画風に変換します。</p>
+  <!-- 画像表示 -->
+  <table cellpadding="5">
+    <tr>
+      <td class="box6" ><img id="img1" width="330px" height="330px"></td>
+      <td class="box6"><img id="result_jpg" src="img/default.jpg" width="330px" height="330px"></td>
+      <td class="box6"> <video id="result_mp4" controls src="" width="330px" height="330px"></video></td>
+    </tr>
+    <tr>
+      <td>インプット</td>
+      <td>アウトプット(鉛筆画風）</td>
+      <td>生成過程の様子</td>
+     
+    </tr>
+  </table>
+  
+  <form class="form" enctype="multipart/form-data" id="imgForm">
+    <input type="hidden" name="" value="">
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" name="image" class="custom-file-input" accept="image/*" required id="id_image">
+      </div>
+    </div>
+    <button class="btn" id="drawing">実行</button>
+ 
+  </form>
+  
+ 
+  </section>
+  
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+  <!-- javascript -->
+  <!-- eel script -->
+  <script type="text/javascript" src="eel.js"></script>
+
+  <script>
+   // 実行ボタンが押された場合に発動
+   var test_btn = document.getElementById('drawing');
+   test_btn.addEventListener('click', function(e) {
+        //ファイルが選択されているかチェック
+        let image_file = document.getElementById('id_image').value;
+        if (image_file ==''){
+          swal({
+                  title: 'ファイルが選択されていません。',
+                  text: '変換したい写真ファイル(jpg, png)を指定してください。',
+                  icon: 'error',
+                  button: 'OK'});
+          }else{    
+        //画像、動画の要素を初期化
+        let img_result = document.getElementById('result_jpg')
+        img_result.src = 'img/default.jpg';
+        //ロード中の制御開始
+        e.preventDefault();
+        $("#overlay").fadeIn(300);
+        let file_path = document.getElementById('id_image').value;
+        async function run() {
+           //python側に処理を渡して画像変換処理を開始する
+          let result = await eel.drawing(file_path)();
+          // 戻り値がnullの場合はpython側の処理が正常終了
+          if (result  === null){
+          console.log("result=" + result + typeof(result))
+          setTimeout(function(){
+            $("#overlay").fadeOut(300);
+        },500)
+          $("#result_jpg").attr("src", 'img/result.jpg');
+          $("#result_mp4").attr("src", 'mp4/result.mp4');
+        // 戻り値にmessageが返ってきた場合エラーを表示
+        }else{
+          swal({
+            title: 'エラーが発生しました。',
+            text:  result,
+            icon: 'error',
+            button: 'OK'});
+            setTimeout(function(){
+              $("#overlay").fadeOut(300);
+          },500)
+        }
+          
+        }  /* end async function */
+        ;
+        run();
+        }   /* end else */
+      
+    }  /* end addEventListener */
+    );
+    
+  
+
+  </script>
+
+
+  <script>  
+  $(function(){
+    $('#id_image').change(function(e){
+      //ファイルオブジェクトを取得する
+      var file = e.target.files[0];
+      var reader = new FileReader();
+   
+      //画像でない場合は処理終了
+      if(file.type.indexOf("image") < 0){
+        alert("画像ファイルを指定してください。");
+        return false;
+      }
+   
+      //アップロードした画像を設定する
+      reader.onload = (function(file){
+        return function(e){
+         
+          $("#img1").attr("src", e.target.result);
+          $("#img1").attr("title", file.name);
+        };
+      })(file);
+      reader.readAsDataURL(file);
+     
+    });
+  });
+  </script>
+
+  
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+  <p>EEL & DeapLearning  </p>
+</div><!-- /.contain>er -->
+</footer>
+<!-- sweetalertでアラートメッセージを装飾 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</body>
+</html>
+
+
+
