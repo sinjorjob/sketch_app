@@ -9,6 +9,6 @@ https://github.com/TZYSJTU/Sketch-Generation-with-Drawing-Process-Guided-by-Vect
 
 ### デモ
 
-![Eelアプリ](https://github.com/sinjorjob/python-django-challenges/blob/master/study-03-desktop-01.gif)
+![Eelアプリ](https://github.com/sinjorjob/sketch_app/blob/master/image/EEL_APPS_DEMO.gif)
 
 
