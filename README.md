@@ -25,7 +25,7 @@ pip install -r requirements.txt
 pip3 install torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio===0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-create folder **sketch_app\source\html\mp4**
+create folder `sketch_app\source\html\mp4`
 
 start apps
 
