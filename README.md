@@ -36,12 +36,12 @@ python views.py
 
 ## Operation Procedure
 
-1. Specify the image files (jpg, png) in the sketch_app\source\input folder from the screen.
+1. Specify the image files (jpg, png) in the sketch_`app\source\input` folder from the screen.
 2. Click the Execute button to start the image conversion process.
 3. The completed image files will be stored in the following folder.
   
-   **sketch_app\source\html\img** ：input, output files
-   **sketch_app\source\html\mp4** : Video of the conversion process
+   `sketch_app\source\html\img` ：input, output files
+   `sketch_app\source\html\mp4` : Video of the conversion process
 
 
 
