@@ -35,16 +35,6 @@ def drawing(file_name):
         print(message)
         return message
 
-
-  
-
-
-
-@eel.expose
-def test():
-
-    print("test-ok")
-    return "exit"
-
+        
 desktop.start(app_name,end_point,size)
 
