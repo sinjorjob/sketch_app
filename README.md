@@ -43,7 +43,9 @@ python views.py
    `sketch_app\source\html\img` ：input, output files  
    `sketch_app\source\html\mp4` : Video of the conversion process  
 
+**Caution**
 
+If you specify an image file that does not exist in the app\source\input folder, an error will occur.
 
 ### Demo
 
