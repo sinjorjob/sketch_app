@@ -19,21 +19,21 @@ def drawing(file_name):
     　　　　file_nameがinputフォルダに存在しなかった場合はエラーメッセージ(message)
       　　　をindex.htmlへ返す。
     """
-  file_name = file_name.split("\\")[-1]
-  cwd = os.getcwd()
-  input_file = os.path.join(cwd, "input", file_name)
+    file_name = file_name.split("\\")[-1]
+    cwd = os.getcwd()
+    input_file = os.path.join(cwd, "input", file_name)
   
-  if os.path.isfile(input_file):
-      print("変換処理を開始します。")
-      n = 10  # グレースケール量子化次数
-      period = 5  # 線（ストローク）幅 
-      # drawing
-      draw(file_name, n, period)
-      print("変換処理が正常終了しました。")
-  else:
-      message = "ファイルが存在しません。"
-      print(message)
-      return message
+    if os.path.isfile(input_file):
+        print("変換処理を開始します。")
+        n = 10  # グレースケール量子化次数
+        period = 5  # 線（ストローク）幅 
+        # drawing
+        draw(file_name, n, period)
+        print("変換処理が正常終了しました。")
+    else:
+        message = "ファイルが存在しません。"
+        print(message)
+        return message
 
 
   
