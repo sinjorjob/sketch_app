@@ -51,7 +51,7 @@ python views.py
 
 **If you specify an image file that does not exist in the app\source\input folder, an error will occur.  
 Since the program is designed to run in a CPU environment, it will take longer to process high quality images.  
-IThe conversion process for the sample files in the /source/input folder took about 15 minutes on a CORE i7 4 Core 16GB memory environment. **
+IThe conversion process for the sample files in the /source/input folder took about 15 minutes on a CORE i7 4 Core 16GB memory environment.**
 
 ### Demo
 
