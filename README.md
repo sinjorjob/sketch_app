@@ -45,7 +45,7 @@ python views.py
 
 **Caution**
 
-**If you specify an image file that does not exist in the app\source\input folder, an error will occur.
+**If you specify an image file that does not exist in the app\source\input folder, an error will occur.  
 Since the program is designed to run in a CPU environment, it will take longer to process high quality images.**
 
 
